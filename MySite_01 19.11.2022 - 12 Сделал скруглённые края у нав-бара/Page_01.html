@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel = "stylesheet" type = "text/css" href = "Site-style.css">
+    <title>Игра</title>
+  </head>
+  <body class = "main-bg">
+      <div class = "main-head">
+      <div class = "head-black bg-black"> 
+        <p class = "head-lang"> Ru </p>
+        <p class = "head-me"> by Gogik Ortey</p>
+      </div>
+      <div class = "head-yellow bg-yel"> <p> Генератор выражений или Чёрный ящик наоборот </p> </div>
+    </div>
+    <div class = "nav-pages">
+      <a href = "#" id = "active-page"> <p> Игра </p> </a>
+      <a href = "Page_02.html" class = "center"> <p> Правила </p> </a>
+      <a href = "Page_03.html"> <p> Результаты </p> </a>
+    </div>
+    <p>  </p>
+
+    <div class = "wh100">
+        <p>Рисунок чёрного ящика</p>
+    </div>
+
+    <div class = "main-spase">
+      <div class = "yellow-button">
+        <a href = "Page_02.html"> Как играть? </a>
+      </div>
+    </div>
+
+    <div class = "game-main-spase">
+      <div class = "game-form">
+        <p class = "grid-p"> Выбор уровня сложности: </p>
+        <div class = "select-lvl-hard">
+          <button class = "b1"> 1 </button> <button class = "b2" id = "button-selected"> 2 </button> 
+          <button class = "b3"> 3 </button>  <button class = "b4"> 4 </button>
+          <button class = "b5"> 5 </button> 
+        </div>
+        <div class = "main-game-form">
+          <div class = "left-pan pan">
+            <p> Значения переменных: </p>
+            <div class = "val-var">
+              <p> a = 15 </p>
+              <p> b = 4 </p>
+              <p> c = 12 </p>
+              <p id = "F"> F = 15 </p>
+            </div>
+          </div>
+          <div class = "right-pan pan"> <!-- rp = right-pan, pan = pannel -->
+            <p class = "rp1"> Ответ: </p>
+            <div class = "rp2">  
+              <div class = "rp2-F">
+                F =
+              </div>               
+              <div class = "rp2-1">
+                <div class = "rp2-1-abc">
+                  a/b*c
+                </div>       
+              </div">           
+            </div>
+            <div class = "rp-3-control-button"> <!-- cb = control-button -->
+              <div class = "rp-3-cb-left-space">
+                <p class = "rp-3-cb-left-space"><button>+</button><button>-</button><button>*</button></p>
+                <p class = "rp-3-cb-left-space"><button>/</button><!--
+                --><button class = "blocked-element">(</button><button class = "blocked-element">)</button></p>            
+              </div>
+                <div class = "rp-3-cb-right-space">
+                <p class = "rp-3-cb-left-space"><button>a</button><button>b</button><button>c</button></p>
+                <p class = "rp-3-cb-left-space"><button id = "d" class = "blocked-element2">d</button><!--
+                --><button class = "blocked-element2">e</button><button class = "blocked-element2">f</button></p>            
+              </div>
+            </div>
+            <div class = "rp-4-down-button"> <!-- db = down-button -->
+              <button class = "rp-4-db-left"> Другие значения </button>
+              <button class = "rp-4-db-right"> Проверить </button>
+            </div>
+          </div>
+        </div>        
+      </div>
+      <div class = "end-no_button">
+        <button> Поздравляю! Всё верно </button>
+      </div>
+    </div>
+  </div>
+  </body>
+  <div class = "footer bg-black">
+    <p> Made in 2022 </p>
+  </div>
+</html>
