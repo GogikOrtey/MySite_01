@@ -1,0 +1,301 @@
+/*
+    Я сделал один .css файл, для всех страниц
+*/       
+    
+    /*////////////////////////////////////////////////////////
+    //                                                      //
+    //                   Page_02 "Правила"                  //
+    //                                                      //
+    /////////////////////////////////////////////////////// */
+                
+                /*////////////////////////////////
+                //         MAIN-COLORS          //
+                ////////////////////////////////*/
+
+/*  Сделал отдельные классы для цветовой палитры сайта 
+    Использую их в коде html, для нужных элементов  */
+
+.bg-black
+{
+    background-color: #4d4d4d;  
+}
+
+.bg-yel
+{
+    background-color: #ffd600;
+}
+
+.bg-blue 
+{
+    background-color: #00a3ff;
+}
+
+.main-bg
+{
+    background-color: #f4f4f4;
+}
+
+/* (!!!) Как всё закончу - сделать стиль, где для каждого элемента будет видна граница */
+
+                /*////////////////////////////////
+                //            HEADER            //
+                ////////////////////////////////*/
+
+.main-head /* Класс для основной шапки сайта (чёрная и жёлтая полоски сверху) */
+{
+    display: grid;    
+    /*grid-template-rows: 60px 120px;*/
+    grid-template-rows: 1fr 2fr;
+    height:  180px;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.1em;
+}
+
+                        /* header-black */ 
+
+.main-head > .head-black /* Создаю ещё один класс гридов, выравниваю его 
+по грид-сетке родительского класса, и задаю у него собственную сетку */
+{  
+    display: grid;
+    color : white;
+    padding : 3px 25px;
+    
+    grid-column: 1/3;
+    grid-row: 1/2;
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.head-black > p 
+{
+    display: inline-block;
+}
+
+.head-black > .head-lang 
+{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.head-black > .head-me 
+{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    text-align : right;
+}
+
+                        /* header-yellow */ 
+
+.main-head > .head-yellow 
+{
+    display: grid;
+
+    grid-column: 1/3;
+    grid-row: 2/3;
+    /* Здесь не прописываю столбцы и строки. 
+    Они заданы по умолчанию */
+}
+
+.head-yellow > p /* Магия центрирования заголовка по середине элемента */
+{
+    display: grid;
+    width: 50%;
+    margin: auto;
+    text-align: center;    
+    font-size: 1.9em;
+}
+
+                /*////////////////////////////////
+                //           NAV-BAR            //
+                ////////////////////////////////*/
+
+.nav-pages /* Стиль для меню навигации, с ссылками на другие страницы этого сайта */
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.nav-pages > a
+{
+    grid-row: 1/2;
+    margin: auto;
+    text-align: center;  
+    vertical-align: middle;
+
+    text-decoration: none;
+    color: black;
+    font-size: 1.25em;
+
+    height: 100%;
+    width: 100%;
+    
+    background-color: #c1c1c1;
+}
+
+#active-page 
+{
+    background-color: #f4f4f4;
+}
+
+/* Почему не работает? */
+/*.nav-pages > a [href = "#"]
+{
+    background-color: #f4f4f4;
+}
+*/
+
+.nav-pages > a:hover /*, #active-page:hover*/
+/* При наведении на кнопку nav-бара, меняю у неё цвет на синий */
+{
+    background-color: #00a3ff;
+}
+
+.nav-pages > a:active, #active-page:active
+/* При клике */
+{
+    background-color: white;
+}
+
+                /*////////////////////////////////
+                //           FOOTER             //
+                ////////////////////////////////*/
+
+.footer 
+{
+    display : grid;
+    height: 100px;
+}
+
+.footer > p 
+{
+    display : block;
+    color : white;
+    padding : 5px;
+    /*border: 1px solid black;*/
+    padding: 10px;
+    margin: auto auto 0 0;
+
+    font-size: 1.1em;
+}
+
+                /*////////////////////////////////
+                //          MAIN-SPASE          //
+                ////////////////////////////////*/
+
+.main-spase
+{
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+.main-spase > .main-element
+{
+    border-radius: 15px;
+    background-color: white;
+    width: 70%;
+    height: auto;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;        
+}
+
+.main-element > p
+{
+    font-size: 1.5em;
+}
+
+.main-element .add-element
+{
+    display: block;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color: #E9E9E9;
+    width: auto;
+    height: auto;
+    margin: 0px auto;
+    padding: 25px;
+    /*border: 1px solid black;*/
+
+    text-align: left;
+}
+
+    /*////////////////////////////////////////////////////////
+    //                                                      //
+    //                 Page_03 "Результаты"                 //
+    //                                                      //
+    /////////////////////////////////////////////////////// */
+
+                /*////////////////////////////////
+                //            TABLE             //
+                ////////////////////////////////*/
+
+
+table 
+{
+    border: 1px solid black;
+    margin : 20px;
+    padding: 0px;
+}
+
+table td 
+{
+    border: 1px solid black;    
+}
+
+    /*////////////////////////////////////////////////////////
+    //                                                      //
+    //                    Page_01 "Игра"                    //
+    //                                                      //
+    /////////////////////////////////////////////////////// */
+
+                /*////////////////////////////////
+                //            TABLE             //
+                ////////////////////////////////*/
+
+
+.wh100
+{
+    border-radius: 15px;
+    background-color: white;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;        
+    width: 70%;
+    display : grid;
+    height: 300px;
+}
+
+.main-spase > .yellow-button 
+{
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: #ffd600;
+    width: 70%;
+    margin: 5px auto;
+    padding: 7px 10px;
+    text-align: center;        
+    vertical-align: middle;
+    font-size: 2em;
+}
+
+.yellow-button > a 
+{
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-align: center;        
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid black;*/
+}
+
+.yellow-button:hover
+{
+    background-color: lightgray;  
+    border: 2px dotted black;
+}
+
+
