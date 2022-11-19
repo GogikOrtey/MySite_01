@@ -1,0 +1,761 @@
+/*
+    Я сделал один .css файл, для всех страниц
+*/       
+    
+    /*////////////////////////////////////////////////////////
+    //                                                      //
+    //                   Page_02 "Правила"                  //
+    //                                                      //
+    /////////////////////////////////////////////////////// */
+                
+                /*////////////////////////////////
+                //         MAIN-COLORS          //
+                ////////////////////////////////*/
+
+/*  Сделал отдельные классы для цветовой палитры сайта 
+    Использую их в коде html, для нужных элементов  */
+
+.bg-black
+{
+    background-color: #4d4d4d;  
+}
+
+.bg-yel
+{
+    background-color: #ffd600;
+}
+
+.bg-blue 
+{
+    background-color: #00a3ff;
+}
+
+.main-bg
+{
+    background-color: #f4f4f4;
+}
+
+                /*////////////////////////////////
+                //          BACKGROUND          //
+                ////////////////////////////////*/
+
+.bg-img
+{
+    background-image: url("Background-Fone-Gray-Small.jpg");
+    background-size: repeat;
+}
+
+.bg-inher
+{
+    background-color: inherit;
+}
+
+body /* Устраняю зазоры между страницей и границами браузера */
+{    
+    padding: 0;
+    margin: 0;        
+}
+
+                /*////////////////////////////////
+                //            MEDIA             //
+                ////////////////////////////////*/
+
+@media (min-width: 1000px) /* Режим отображеия для широких экранов, на ПК */
+{
+    body
+    {
+        width: 1000px;
+        margin: auto;
+    }
+
+    .nav-pages
+    {
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .head-black, .footer
+    {
+        border-radius: 10px 10px 0px 0px ;
+    }
+}
+
+/* Делаю красивое отображение футера на странице с результатами
+(т.к. она очень короткая) */
+@media (min-height: 715px) 
+{
+    #page-3.footer
+    {
+        border-radius: 10px;
+    }
+}
+
+/* Включаю закруглённые углы для футера и хедера 
+на всех устройствах длиннее обычного монитора */
+@media ((min-height: 1500px) and (handheld))
+{
+    .footer
+    {
+        border-radius: 10px;
+    }
+
+    .nav-pages
+    {
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .head-black
+    {
+        border-radius: 10px 10px 0px 0px ;
+    }
+}
+
+                /*////////////////////////////////
+                //            HEADER            //
+                ////////////////////////////////*/
+
+.main-head /* Класс для основной шапки сайта (чёрная и жёлтая полоски сверху) */
+{
+    display: grid;    
+    /*grid-template-rows: 60px 120px;*/
+    grid-template-rows: 1fr 2fr;
+    height:  180px;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.1em;
+}
+
+                        /* Чёрная полоска */ 
+
+.main-head > .head-black /* Создаю ещё один класс гридов, выравниваю его 
+по грид-сетке родительского класса, и задаю у него собственную сетку */
+{  
+    display: grid;
+    color : white;
+    padding : 3px 25px;
+    
+    grid-column: 1/3;
+    grid-row: 1/2;
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.head-black > p 
+{
+    display: inline-block;
+}
+
+.head-black > .head-lang 
+{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.head-black > .head-me 
+{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    text-align : right;
+}
+
+                        /* Жёлтая полоска */ 
+
+.main-head > .head-yellow 
+{
+    display: grid;
+
+    grid-column: 1/3;
+    grid-row: 2/3;
+    /* Здесь не прописываю столбцы и строки. 
+    Они заданы по умолчанию */
+}
+
+.head-yellow > p /* Магия центрирования заголовка по середине элемента */
+{
+    display: grid;
+    width: 50%;
+    margin: auto;
+    text-align: center;    
+    font-size: 1.9em;
+}
+
+                /*////////////////////////////////
+                //           NAV-BAR            //
+                ////////////////////////////////*/
+
+.nav-pages /* Стиль для меню навигации, с ссылками на другие страницы этого сайта */
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: #929292;
+}
+
+.nav-pages > a
+{
+    grid-row: 1/2;
+    margin: auto;
+    text-align: center;  
+    vertical-align: middle;
+
+    text-decoration: none;
+    color: black;
+    font-size: 1.25em;
+
+    height: 90%;
+    width: 95%;
+
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: 0px;
+    
+    background-color: #c1c1c1;
+}
+
+.nav-pages > a.center 
+{
+    width: 99%;
+}
+
+.nav-pages > #active-page 
+{
+    background-color: #f4f4f4;
+}
+
+/* Почему не работает? */
+/*.nav-pages > a [href = "#"]
+{
+    background-color: #f4f4f4;
+}
+*/
+
+.nav-pages > a:hover 
+/* При наведении на кнопку nav-бара, меняю у неё цвет */
+{
+    /*background-color: #00a3ff;*/
+    background-color:#ffd600;
+}
+
+.nav-pages > a:active, #active-page:active
+/* При клике */
+{
+    /*background-color: white;*/
+    /*background-color:#ff9900;*/
+}
+
+                /*////////////////////////////////
+                //           FOOTER             //
+                ////////////////////////////////*/
+
+.footer 
+{
+    display : grid;
+    height: 100px;
+}
+
+.footer > p 
+{
+    display : block;
+    color : white;
+    padding : 5px;
+    /*border: 1px solid black;*/
+    padding: 10px;
+    margin: auto auto 0 0;
+
+    font-size: 1.1em;
+}
+
+                /*////////////////////////////////
+                //          MAIN-SPASE          //
+                ////////////////////////////////*/
+
+/* Основное пространство страницы */
+
+.main-spase
+{
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+/* Белый закруглённый блок, с заголовком */
+.main-spase > .main-element 
+{
+    border-radius: 15px;
+    background-color: white;
+    width: 70%;
+    height: auto;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;        
+}
+
+.main-element > p
+{
+    font-size: 1.5em;
+}
+
+/* светло-серый блок внтури белого, с основным текстом */
+.main-element .add-element 
+{
+    display: block;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color: #E9E9E9;
+    width: auto;
+    height: auto;
+    margin: 0px auto;
+    padding: 25px;
+    /*border: 1px solid black;*/
+
+    height: 300px;
+
+    text-align: left;
+}
+
+    /*////////////////////////////////////////////////////////
+    //                                                      //
+    //                 Page_03 "Результаты"                 //
+    //                                                      //
+    /////////////////////////////////////////////////////// */
+
+                /*////////////////////////////////
+                //            TABLE             //
+                ////////////////////////////////*/
+
+/* Правильно ли я сделал, что вставил сюда таблицу? */
+
+table 
+{
+    border: 1px solid black;
+    margin : 20px;
+    padding: 0px;
+}
+
+/* Некоторые другие атрибуты таблицы указаны непосредственно в html-коде */
+
+table td 
+{
+    border: 1px solid black;    
+}
+
+    /*////////////////////////////////////////////////////////
+    //                                                      //
+    //                    Page_01 "Игра"                    //
+    //                                                      //
+    /////////////////////////////////////////////////////// */
+
+                /*////////////////////////////////
+                //            TABLE             //
+                ////////////////////////////////*/
+
+
+.wh100 /* Блок для рисунка чёрного ящика */
+{
+    border-radius: 15px;
+    background-color: white;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;        
+    width: 70%;
+    display : grid;
+    height: 300px;
+}
+
+/*-----*/
+
+.main-spase > .yellow-button /* Жёлтая кнопка "Как играть?" */
+{
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: #ffd600;
+    width: 70%;
+    margin: 5px auto;
+    padding: 7px 10px;
+    text-align: center;        
+    vertical-align: middle;
+    font-size: 2em;
+}
+
+.yellow-button > a 
+{
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-align: center;        
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid black;*/
+}
+
+.yellow-button:hover
+{
+    background-color: lightgray;  
+    border: 2px dotted black;
+}
+
+                /*////////////////////////////////
+                //          GAME-FORM           //
+                ////////////////////////////////*/
+
+.game-main-spase
+{
+    display: block;
+    border-radius: 15px;
+    background-color: white;
+    width: 70%;
+    height: auto;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.game-form 
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 80px 40px 300px auto ; /* 6 */
+}
+
+/*-----*/
+
+.game-form > .grid-p 
+{
+    margin: 10px auto;
+    grid-row: 1/2;
+    text-align: center;
+    font-size: larger;
+}
+
+/*-----*/
+
+/* Кнопки выбора уровня сложности */
+
+.select-lvl-hard
+{
+    display: grid;
+    grid-row: 2/3;
+    width: 440px;
+    margin: auto;
+    height: 65px;
+    text-align: justify;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+
+    grid-column-gap: 20px;
+}
+
+.select-lvl-hard > button
+{
+    border: 0px solid black;
+    text-align: center;
+    font-size: 1.7em;
+    border-radius: 15%;
+}
+
+.select-lvl-hard > button:hover
+{
+    background-color: #c1c1c1;
+}
+
+.select-lvl-hard > button:active
+{
+    border: 2px solid black;
+}
+
+.select-lvl-hard > #button-selected
+{
+    background-color: #00a3ff;
+    border: 2px solid black;
+}
+
+.select-lvl-hard > .b1
+{
+    grid-column: 1/2;
+}
+
+/*-----*/
+
+/* 2 прямоугольника со значениями и формой заполнения */
+
+.main-game-form
+{
+    grid-row: 3/4;
+    display: grid;
+
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+
+    width: 95%;
+    height: 300px;
+    margin: auto;
+    padding: 25px 0;
+
+}
+
+.left-pan 
+{
+    grid-column: 1/2;
+    margin: 15px auto 15px 20px;
+}
+
+.right-pan
+{
+    grid-column: 2/3;
+    margin: 15px 20px 15px auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    font-size: larger;
+    font-style: italic;
+}
+
+.main-game-form > .pan
+{
+
+    display: block;
+    border-radius: 15px;
+    background-color: #E9E9E9;
+
+    width: 85%;
+    height: auto;
+    
+    padding: 2px;
+
+    text-align: center;
+}
+
+/*-----*/
+
+/* Место, где прописаны значения формул */
+
+.val-var
+{
+    line-height: 8px;
+    font-size: larger;
+    text-align: left;
+    margin-left: 32% ;
+}
+
+#F 
+{
+    line-height: 40px;
+}
+
+/*-----*/
+
+/* Блок "Ответ" */
+/* Коротко о том, как я устал давать уникальные названия разным элементам: */
+
+.rp1 
+{
+    grid-row: 1;
+}
+
+.rp2 
+{
+    display: grid;
+    border-radius: 7px;
+    background-color: white;
+    width: 88%;
+    height: 28px;
+    margin: 15px auto;
+    text-align: center;
+
+    grid-template-columns: 13% auto;
+}
+
+.rp2 > .rp2-1
+{
+    display: block;
+    border: 1px solid black;
+    border-radius: 7px;
+    width: 100%;
+    height: 98%;
+    text-align: right;
+    margin: 0px 0px 0px auto;
+}
+
+.rp2 .rp2-F
+{
+    grid-column: 1/2;
+    text-align: center;
+    line-height: 25px;
+}
+
+.rp2-1-abc
+{
+    text-align: left;
+    letter-spacing: 3px;
+    line-height: 25px;
+    padding-left: 8px;
+}
+
+/*-----*/
+
+.rp-3-control-button
+{
+    grid-row: 3/4;
+    grid-column: 1/3;
+    display: grid;
+    width: 97.5%;
+    margin: 10px auto;
+    margin-bottom: 0px;
+    height: 100px;
+    text-align: center;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    grid-column-gap: 20px;
+
+    line-height: 5px;
+    padding: 5px;
+
+
+}
+
+.rp-3-cb-left-space
+{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.rp-3-cb-right-space
+{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.rp-3-control-button p
+{
+    margin: 5px 0px;
+}
+
+.rp-3-cb-left-space > button
+{
+    display: inline;
+    border: 0px solid black;
+    text-align: center;
+    font-size:larger;
+    border-radius: 10%;
+    background-color: white;
+
+    line-height: 5px;
+    padding: 13px;
+
+    margin: 0px 5px;
+
+    width: 40px;
+    height: 40px;
+}
+
+.rp-3-cb-left-space > button:hover
+{
+    background-color: #c1c1c1;
+    border: 0px solid black;
+}
+
+.rp-3-cb-left-space > button:active
+{
+    background-color: #00a3ff;
+}
+
+/* Максимальный приоритет для заблокированных кнопок: */
+
+.rp-3-cb-left-space > button.blocked-element  
+{
+    background-color: #c1c1c1;
+    border: 0px solid black;
+}
+
+.rp-3-cb-left-space > button.blocked-element2  
+{
+    background-color: #c1c1c1;
+    border: 0px solid black;
+    margin-right: 5px;
+}
+
+#slash
+{
+    margin-right: 0px;
+}
+
+#d
+{
+    margin-left: 5px;
+}
+
+/*-----*/
+
+.rp-4-down-button
+{
+    grid-column: 1/3;
+    grid-row: 4/6;
+    border: 0px solid black;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 3px;
+}
+
+.rp-4-db-left
+{
+    grid-column: 1/2;
+    background-color: #ff9900;
+    border: 2px solid black;
+    /*border-radius: 10%;*/
+}
+
+.rp-4-db-right
+{
+    grid-column: 2/3;
+    background-color: #00a3ff;
+    border: 2px solid black;
+    /*border-radius: 10%;*/
+}
+
+.rp-4-down-button > button
+{
+    height: 40px;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 0px;
+    font-size: medium;
+    border-radius: 7px;
+}
+
+.rp-4-down-button > button:hover
+{
+    border-style: dashed;
+}
+.rp-4-down-button > button:active
+{
+    background-color: #c1c1c1;
+}
+
+/*----------------*/
+
+.end-no_button /* Кнопка "Поздравляю! Всё верно" */
+{
+    grid-row: 5/6;
+    width: 100%;
+}
+
+.end-no_button > button 
+{
+    width: 90%;
+    height: 55px;
+    border-radius: 10px;
+    border: 0px solid black;
+    background-color: #ffd600;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
