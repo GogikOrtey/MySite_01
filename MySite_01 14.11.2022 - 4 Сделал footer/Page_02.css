@@ -1,0 +1,151 @@
+/*  Сделал отдельные классы для цветовой палитры сайта 
+    Использую их в коде html, для нужных элементов  */
+
+.bg-black
+{
+    background-color: #4d4d4d;  
+}
+
+.bg-yel
+{
+    background-color: #ffd600;
+}
+
+.bg-blue 
+{
+    background-color: #00a3ff;
+}
+
+.main-bg
+{
+    background-color: #f4f4f4;
+}
+
+/* (!!!) Как всё закончу - сделать стиль, где для каждого элемента будет видна граница */
+
+.main-head /* Класс для основной шапки сайта (чёрная и жёлтая полоски сверху) */
+{
+    display: grid;    
+    /*grid-template-rows: 60px 120px;*/
+    grid-template-rows: 1fr 2fr;
+    height:  180px;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.1em;
+}
+
+
+.main-head > .head-black /* Создаю ещё один класс гридов, выравниваю его 
+по грид-сетке родительского класса, и задаю у него собственную сетку */
+{  
+    display: grid;
+    
+    grid-column: 1/3;
+    grid-row: 1/2;
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.head-black > p 
+{
+    display: inline-block;
+}
+
+.head-black > .head-lang 
+{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.head-black > .head-me 
+{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    text-align : right;
+}
+
+.main-head > .head-yellow 
+{
+    display: grid;
+
+    grid-column: 1/3;
+    grid-row: 2/3;
+    /* Здесь не прописываю столбцы и строки. 
+    Они заданы по умолчанию */
+}
+
+.head-yellow > p /* Магия центрирования заголовка по середине элемента */
+{
+    display: grid;
+    width: 50%;
+    margin: auto;
+    text-align: center;    
+    font-size: 1.9em;
+}
+
+.nav-pages /* Стиль для меню навигации, с ссылками на другие страницы этого сайта */
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+
+.nav-pages > a
+{
+    grid-row: 1/2;
+    margin: auto;
+    text-align: center;  
+    vertical-align: middle;
+
+    text-decoration: none;
+    color: black;
+    font-size: 1.25em;
+
+    height: 100%;
+    width: 100%;
+    
+    background-color: #c1c1c1;
+}
+
+#active-page 
+{
+    background-color: #f4f4f4;
+}
+
+/* Почему не работает? */
+/*.nav-pages > a [href = "#"]
+{
+    background-color: #f4f4f4;
+}
+*/
+
+.nav-pages > a:hover /*, #active-page:hover*/
+/* При наведении на кнопку nav-бара, меняю у неё цвет на синий */
+{
+    background-color: #00a3ff;
+}
+
+.nav-pages > a:active, #active-page:active
+/* При клике */
+{
+    background-color: white;
+}
+
+.footer 
+{
+    display : grid;
+    height: 100px;
+}
+
+.footer > p 
+{
+    display : block;
+    color : white;
+    padding : 5px;
+    /*border: 1px solid black;*/
+    padding: 10px;
+    margin: auto auto 0 0;
+
+    font-size: 1.1em;
+}
